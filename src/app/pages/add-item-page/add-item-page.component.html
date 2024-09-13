@@ -1,0 +1,37 @@
+<div class="container" [attr.inert]="(sendingReq.isLocked) || null">
+    <form (submit)="sendForm()" [formGroup]="form">
+        <label>
+            <span>שם</span>
+            <input type="text" formControlName="name">
+        </label>
+
+        <label>
+            <span>כמות</span>
+            <input type="number" formControlName="qty">
+        </label>
+
+        <label>
+            <span>מחיר</span>
+            <input type="number" formControlName="price">
+        </label>
+
+        <label>
+            <span>תיאור</span>
+            <input type="text" formControlName="description">
+        </label>
+        <button [disabled]="!form.valid">
+            @if(sendingReq.isLocked) {
+            <div class="spinner">
+                <app-loading-spinner />
+            </div>
+            }
+            @else {
+            <span>שלח</span>
+            }
+        </button>
+    </form>
+    <button class="reset-form-btn" (click)="this.form.reset()">
+        <span>אפס נתונים</span>
+        <i class="fa-solid fa-file-circle-xmark"></i>
+    </button>
+</div>

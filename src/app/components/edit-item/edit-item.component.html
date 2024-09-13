@@ -1,0 +1,50 @@
+@if(form !== undefined) {
+<div class="container" [attr.inert]="(deletingItem.isLocked || sendingUpdate.isLocked) || null">
+    <form (submit)="sendForm()" [formGroup]="form">
+        <div class="filed">
+            <span>מזהה</span>
+            <span>{{_item?.id}}</span>
+        </div>
+        <label>
+            <span>שם</span>
+            <input type="text" formControlName="name">
+        </label>
+
+        <label>
+            <span>כמות</span>
+            <input type="number" formControlName="qty">
+        </label>
+
+        <label>
+            <span>מחיר</span>
+            <input type="number" formControlName="price">
+        </label>
+
+        <label>
+            <span>תיאור</span>
+            <input type="text" formControlName="description">
+        </label>
+        <button [disabled]="!form.valid">
+            @if(sendingUpdate.isLocked) {
+            <div class="spinner">
+                <app-loading-spinner />
+            </div>
+            }
+            @else {
+            <span>שלח</span>
+            }
+        </button>
+    </form>
+    <button class="delete-item-btn" (click)="deleteItem()">
+        @if(deletingItem.isLocked) {
+        <div class="spinner">
+            <app-loading-spinner />
+        </div>
+        }
+        @else {
+        <span>מחיקת מוצר</span>
+        <i class="fa-solid fa-trash"></i>
+        }
+    </button>
+</div>
+}

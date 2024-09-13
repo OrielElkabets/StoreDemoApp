@@ -1,0 +1,15 @@
+<div class="container" routerLink="/item/{{item.id}}">
+    <p class="title">{{item.name}}</p>
+    <p>
+        <b>תיאור: </b>
+        <span>{{item.description ?? 'ללא תיאור'}}</span>
+    </p>
+    <p>
+        <b>מחיר: </b>
+        <span>{{item.price}}₪</span>
+    </p>
+    <p>
+        <b>מזהה מוצר: </b>
+        <span>{{item.id}}</span>
+    </p>
+</div>

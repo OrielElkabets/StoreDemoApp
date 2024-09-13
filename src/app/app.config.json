@@ -1,0 +1,4 @@
+{
+    "useFakeDb": true,
+    "apiRoot": "https://localhost:7208/api"
+}

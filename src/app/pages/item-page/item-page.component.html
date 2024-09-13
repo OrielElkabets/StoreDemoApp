@@ -1,0 +1,15 @@
+<div class="container">
+    @if(loading) {
+        <div class="loading-item">
+            <p>טוען מוצר</p>
+            <app-loading-spinner />
+        </div>
+    }
+    @else if (item) {
+        <app-edit-item [item]="item"></app-edit-item>
+    }
+    @else {
+        <p>404 - מוצר לא נמצא</p>
+        <a routerLink="/">חזרה לדף הבית</a>
+    }
+</div>

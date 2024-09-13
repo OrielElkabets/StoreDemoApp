@@ -1,0 +1,15 @@
+.container {
+    padding: 20px;
+}
+
+.loading-item {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+
+    app-loading-spinner {
+        scale: 0.7;
+    }
+}

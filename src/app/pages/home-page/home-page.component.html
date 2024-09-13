@@ -1,0 +1,5 @@
+<div class="container">
+    @for (item of itemsService.items; track $index) {
+        <app-item [item]="item"></app-item>
+    }
+</div>
