@@ -8,7 +8,7 @@ export class LockInteractions {
 
     lock(ms?: number) {
         this._isLocked = true
-
+        if (this.timeoutId) clearTimeout(this.timeoutId)
         if (ms) {
             this.timeoutId = setTimeout(() => {
                 this._isLocked = false
